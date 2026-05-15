@@ -194,6 +194,41 @@
       gap: 32px;
       list-style: none;
     }
+    /* Areas dropdown */
+    .has-dropdown { position: relative; }
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10,10,10,0.97);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      min-width: 158px;
+      padding: 6px 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      transform: translateX(-50%) translateY(-4px);
+      z-index: 300;
+    }
+    .has-dropdown:hover .nav-dropdown,
+    .has-dropdown:focus-within .nav-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 9px 18px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(240,239,232,0.75);
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-dropdown a:hover { color: var(--accent); background: rgba(255,255,255,0.04); }
     .nav-links a {
       font-size: 0.76rem;
       font-weight: 600;
@@ -655,7 +690,17 @@
       <li><a href="#about">About</a></li>
       <li><a href="memberships/">Memberships</a></li>
       <li><a href="classes/">Classes</a></li>
-      <li><a href="#offer">What We Offer</a></li>
+      <li class="has-dropdown">
+        <a href="wirral/" aria-haspopup="true">Areas Covered</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="hoylake/">Hoylake</a>
+          <a href="west-kirby/">West Kirby</a>
+          <a href="meols/">Meols</a>
+          <a href="heswall/">Heswall</a>
+          <a href="caldy/">Caldy</a>
+          <a href="wirral/">All Wirral</a>
+        </div>
+      </li>
       <li><a href="#contact" class="btn btn-gold nav-cta">Enquire</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Open menu">
@@ -670,8 +715,12 @@
   <a href="#home"        class="mob-lnk">Home</a>
   <a href="#about"       class="mob-lnk">About</a>
   <a href="memberships/" class="mob-lnk">Memberships</a>
-  <a href="classes/"    class="mob-lnk">Classes</a>
-  <a href="#offer"       class="mob-lnk">What We Offer</a>
+  <a href="classes/"     class="mob-lnk">Classes</a>
+  <a href="hoylake/"     class="mob-lnk" style="font-size:clamp(1.4rem,4.5vw,2rem)">Hoylake</a>
+  <a href="west-kirby/"  class="mob-lnk" style="font-size:clamp(1.4rem,4.5vw,2rem)">West Kirby</a>
+  <a href="meols/"       class="mob-lnk" style="font-size:clamp(1.4rem,4.5vw,2rem)">Meols</a>
+  <a href="heswall/"     class="mob-lnk" style="font-size:clamp(1.4rem,4.5vw,2rem)">Heswall</a>
+  <a href="caldy/"       class="mob-lnk" style="font-size:clamp(1.4rem,4.5vw,2rem)">Caldy</a>
   <a href="#contact"     class="mob-lnk">Enquire</a>
 </div>
 
@@ -949,17 +998,19 @@
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Visit Us</h4>
+        <h4>Areas Covered</h4>
+        <ul>
+          <li><a href="hoylake/">Hoylake</a></li>
+          <li><a href="west-kirby/">West Kirby</a></li>
+          <li><a href="meols/">Meols</a></li>
+          <li><a href="heswall/">Heswall</a></li>
+          <li><a href="caldy/">Caldy</a></li>
+          <li><a href="wirral/">All Wirral</a></li>
+        </ul>
+        <h4 style="margin-top:22px">Visit Us</h4>
         <ul>
           <li><a href="https://maps.google.com/?q=Market+Street+Hoylake+Wirral" target="_blank" rel="noopener">Market Street, Hoylake</a></li>
           <li><a href="mailto:Jennifer@nomad-gyms.com">Jennifer@nomad-gyms.com</a></li>
-        </ul>
-        <h4 style="margin-top:22px">Hours</h4>
-        <ul>
-          <li style="color:var(--muted);font-size:.85rem">Mon&ndash;Thu: 6am &ndash; 8pm</li>
-          <li style="color:var(--muted);font-size:.85rem">Fri: 6am &ndash; 7pm</li>
-          <li style="color:var(--muted);font-size:.85rem">Sat: 8am &ndash; 1pm</li>
-          <li style="color:var(--muted);font-size:.85rem">Sun: 8am &ndash; 12pm</li>
         </ul>
       </div>
     </div>
